@@ -87,7 +87,7 @@ func (app *application) handleText() error {
 			location += str + " "
 		}
 
-		reply, err := commands.Weather(location)
+		reply, err := commands.Weather(location, app.Config.OpenWeatherMapsKey)
 		if err != nil {
 			return err
 		}

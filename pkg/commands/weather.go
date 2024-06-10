@@ -2,20 +2,13 @@ package commands
 
 import (
 	"fmt"
-	"os"
 
 	owm "github.com/briandowns/openweathermap"
-	"github.com/joho/godotenv"
 )
 
 // Weather queries the OpenWeatherMap Api for the given location and sends the
 // current weather response to the target twitch chat.
-func Weather(location string) (string, error) {
-	err := godotenv.Load()
-	if err != nil {
-		return "", ErrInternalServerError
-	}
-	owmKey := os.Getenv("OWM_KEY")
+func Weather(location, owmKey string) (string, error) {
 
 	w, err := owm.NewCurrent("C", "en", owmKey)
 	if err != nil {

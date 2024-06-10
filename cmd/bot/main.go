@@ -12,9 +12,10 @@ import (
 )
 
 type config struct {
-	AllowedUser       string
-	UploadURL         string
-	WolframAlphaAppID string
+	AllowedUser        string
+	UploadURL          string
+	WolframAlphaAppID  string
+	OpenWeatherMapsKey string
 }
 
 type application struct {
@@ -29,9 +30,10 @@ func main() {
 	}
 
 	cfg := &config{
-		AllowedUser:       os.Getenv("ALLOWED_USER"),
-		UploadURL:         os.Getenv("UPLOAD_URL"),
-		WolframAlphaAppID: os.Getenv("WOLFRAMALPHA_APP_ID"),
+		AllowedUser:        os.Getenv("ALLOWED_USER"),
+		UploadURL:          os.Getenv("UPLOAD_URL"),
+		WolframAlphaAppID:  os.Getenv("WOLFRAMALPHA_APP_ID"),
+		OpenWeatherMapsKey: os.Getenv("OWM_KEY"),
 	}
 
 	pref := tele.Settings{
