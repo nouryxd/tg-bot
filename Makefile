@@ -5,3 +5,8 @@ dev:
 docker:
 	docker compose build 
 	docker compose up
+
+dockerprod:
+	docker compose build 
+	docker compose up -d
+
